@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu Example</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    #menu {
+      width: 200px;
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+
+    #content {
+      flex: 1;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu">
+    <ul>
+      <li><a href="#" onclick="showContent('item1')">Item 1</a></li>
+      <li><a href="#" onclick="showContent('item2')">Item 2</a></li>
+      <li><a href="#" onclick="showContent('item3')">Item 3</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <h2>Welcome</h2>
+    <p>Select an item from the menu on the left.</p>
+  </div>
+
+  <script>
+    function showContent(item) {
+      var contentDiv = document.getElementById("content");
+      var content = "";
+
+      if (item === "item1") {
+        content = `
+          <h2>Item 1</h2>
+          <img src="item1.jpg" alt="Item 1 Image" width="300" height="200">
+          <p>Some text related to Item 1.</p>
+        `;
+      } else if (item === "item2") {
+        content = `
+          <h2>Item 2</h2>
+          <img src="item2.jpg" alt="Item 2 Image" width="300" height="200">
+          <p>Some text related to Item 2.</p>
+        `;
+      } else if (item === "item3") {
+        content = `
+          <h2>Item 3</h2>
+          <img src="item3.jpg" alt="Item 3 Image" width="300" height="200">
+          <p>Some text related to Item 3.</p>
+        `;
+      }
+
+      contentDiv.innerHTML = content;
+    }
+  </script>
+</body>
+</html>
